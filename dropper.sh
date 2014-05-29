@@ -11,15 +11,23 @@ while [ $x -lt $1 ]; do
     let "b = b + 960"
     c=$RANDOM
     let "c = c % 12"
-    let "c = c + 900"
+    let "c = c + 675"
     d=$RANDOM
     let "d = d % 7"
     let "d = d + 1800"
+    e=$RANDOM
+    let "e = e % 10"
+    let "e = e + 900"
+    f=$RANDOM
+    let "f = f % 5"
+    let "f = f + 175"
 
     input tap $a $b
-    busybox sleep 0.1
+    busybox sleep 0.2
     input tap $c $d
-    busybox sleep 0.8
+    busybox sleep 0.2
+    input tap $e $f
+    busybox sleep 0.2
 
     (( x++ ))
 done
